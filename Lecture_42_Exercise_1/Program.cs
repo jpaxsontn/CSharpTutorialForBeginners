@@ -11,7 +11,6 @@ namespace Lecture_42_Exercise_1
         static void Main(string[] args)
         {
             Console.WriteLine("Enter a number between 1 and 10");
-            //As per requirements, no need to do input validation.
             var number = Int32.Parse(Console.ReadLine());
             if (number >= 1 && number <= 10)
             {
