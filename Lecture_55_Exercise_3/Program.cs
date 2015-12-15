@@ -12,18 +12,24 @@ namespace Lecture_55_Exercise_3
         {
             Console.WriteLine("Enter 5 unique numbers");
             var numbers = new List<int>();
-            int inputNumber = Int32.Parse(Console.ReadLine());
             while(numbers.Count < 5)
             {
-                if (numbers.Contains(inputNumber))
+                int inputNumber;
+                if (Int32.TryParse(Console.ReadLine(), out inputNumber))
                 {
-                    Console.WriteLine("Number has already been entered. Try again");
+                    if (numbers.Contains(inputNumber))
+                    {
+                        Console.WriteLine("Number has already been entered. Try again");
+                    }
+                    else
+                    {
+                        numbers.Add(inputNumber);
+                    }
                 }
                 else
                 {
-                    numbers.Add(inputNumber);
+                    Console.WriteLine("Input not a number");
                 }
-                inputNumber = Int32.Parse(Console.ReadLine());
             }
 
             numbers.Sort();
