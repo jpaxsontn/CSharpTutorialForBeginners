@@ -140,8 +140,9 @@ namespace Lecture_75_Exercise_1_And_2
 
         public static List<string> GetWords(string input)
         {
+            //Using ToLower so all comparisons will be made against lowercase.
             char[] delimiters = new[] { ',', ';', ' ', '\t', '\r', '\n', '.', '?', '!' };
-            var words = input.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            var words = input.ToLower().Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
             return words.ToList();
         }
 
